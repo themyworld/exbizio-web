@@ -88,13 +88,27 @@ const t = {
   },
 }
 
+function LogoMark({ size = 30 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <rect width="32" height="32" rx="8" fill="#4f46e5" />
+      {/* Output arrow → (white, prominent) */}
+      <line x1="6" y1="11" x2="21" y2="11" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+      <polyline points="17,7 21,11 17,15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      {/* Input arrow ← (light indigo, subtle) */}
+      <line x1="26" y1="21" x2="11" y2="21" stroke="#c7d2fe" strokeWidth="2" strokeLinecap="round" />
+      <polyline points="15,17 11,21 15,25" stroke="#c7d2fe" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </svg>
+  )
+}
+
 function Logo({ size = "md" }: { size?: "sm" | "md" }) {
+  const iconSize = size === "sm" ? 24 : 30
   const cls = size === "sm" ? "text-xl" : "text-2xl"
   return (
-    <span className={`${cls} tracking-tight leading-none select-none font-sans`}>
-      <span className="font-light text-slate-400">ex</span>
-      <span className="font-extrabold text-slate-900">biz</span>
-      <span className="font-bold text-indigo-600">IO</span>
+    <span className={`inline-flex items-center gap-2 ${cls} tracking-tight leading-none select-none font-sans`}>
+      <LogoMark size={iconSize} />
+      <span><span className="font-light text-slate-400">ex</span><span className="font-extrabold text-slate-900">biz</span><span className="font-bold text-indigo-600">IO</span></span>
     </span>
   )
 }
