@@ -241,7 +241,7 @@ export default function HomePage() {
             </div>
             <p className="text-sm text-slate-500 leading-relaxed mb-5">{tx.reservio_desc}</p>
             <a
-              href="https://reservio.exbizio.com"
+              href="https://reservio.themyworld.com"
               className="text-sm font-semibold text-violet-600 hover:text-violet-800 transition-colors"
             >
               {tx.product_link}
