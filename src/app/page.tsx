@@ -19,6 +19,12 @@ const t = {
     reservio_name: "Reservio",
     reservio_tag: "予約・POS SaaS",
     reservio_desc: "美容サロン向け予約・POSシステム。予約管理・スタッフシフト・売上管理をひとつのプラットフォームにまとめます。",
+    qrofyle_name: "QROFYLE",
+    qrofyle_tag: "デジタル名刺 SaaS",
+    qrofyle_desc: "QRコードで繋がるデジタル名刺・組織プロフィール。個人・チーム・支店のプロフィールをQRひとつで共有できます。",
+    themyworld_name: "The MY World",
+    themyworld_tag: "パーソナルサイト",
+    themyworld_desc: "Google Local Guideレビューを掲載するパーソナルサイト。ホーチミンを中心にレストラン・スポットを紹介します。",
     product_link: "詳細を見る →",
     about_title: "私たちについて",
     about_desc: "themyworld.com は、アプリ制作・メディア運営・コンサルティングを軸に、自由な発想で価値を生み出すクリエイティブグループです。ヘルスケアからビジネス管理まで、使う人の課題を解決するプロダクトをつくり続けています。",
@@ -46,6 +52,12 @@ const t = {
     reservio_name: "Reservio",
     reservio_tag: "Reservation & POS SaaS",
     reservio_desc: "A reservation & POS system for beauty salons. Manage bookings, staff scheduling, and sales all in one platform.",
+    qrofyle_name: "QROFYLE",
+    qrofyle_tag: "Digital Business Card SaaS",
+    qrofyle_desc: "Digital business cards & organization profiles via QR code. Share individual, team, and branch profiles with a single scan.",
+    themyworld_name: "The MY World",
+    themyworld_tag: "Personal Site",
+    themyworld_desc: "A personal site featuring Google Local Guide reviews. Discover restaurants and spots in Ho Chi Minh City and beyond.",
     product_link: "Learn more →",
     about_title: "About Us",
     about_desc: "themyworld.com is a creative collective building apps, creating media, and providing consulting — freely and independently. From healthcare tools to business management systems, we craft digital products that solve real problems.",
@@ -73,6 +85,12 @@ const t = {
     reservio_name: "Reservio",
     reservio_tag: "Đặt lịch & POS SaaS",
     reservio_desc: "Hệ thống đặt lịch & POS cho salon làm đẹp. Quản lý đặt lịch, lịch nhân viên và doanh thu trong một nền tảng duy nhất.",
+    qrofyle_name: "QROFYLE",
+    qrofyle_tag: "Danh thiếp số SaaS",
+    qrofyle_desc: "Danh thiếp số & hồ sơ tổ chức qua mã QR. Chia sẻ hồ sơ cá nhân, nhóm và chi nhánh chỉ bằng một lần quét.",
+    themyworld_name: "The MY World",
+    themyworld_tag: "Trang cá nhân",
+    themyworld_desc: "Trang cá nhân với các đánh giá Google Local Guide. Khám phá nhà hàng và địa điểm tại TP.HCM và các nơi khác.",
     product_link: "Xem chi tiết →",
     about_title: "Về chúng tôi",
     about_desc: "themyworld.com là một nhóm sáng tạo chuyên phát triển ứng dụng, sản xuất media và tư vấn — tự do và độc lập. Từ công cụ chăm sóc sức khỏe đến hệ thống quản lý doanh nghiệp, chúng tôi tạo ra các sản phẩm số giải quyết vấn đề thực tế.",
@@ -86,6 +104,84 @@ const t = {
     error: "Gửi thất bại. Vui lòng thử lại.",
     footer: "© 2025 themyworld.com. All rights reserved.",
   },
+}
+
+// ─── Product logo icons ────────────────────────────────────────────────────
+
+function VitraceIcon() {
+  return (
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="9" fill="#10b981"/>
+      <polyline points="26,18 21,18 17.5,25 10.5,11 7,18 4,18"
+        stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
+        transform="translate(3,0)"/>
+    </svg>
+  )
+}
+
+function ReservioIcon() {
+  function star4(cx: number, cy: number, r1: number, r2: number) {
+    const pts = []
+    for (let i = 0; i < 8; i++) {
+      const a = (i * Math.PI) / 4 - Math.PI / 2
+      const r = i % 2 === 0 ? r1 : r2
+      pts.push(`${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`)
+    }
+    return `M ${pts.join(" L ")} Z`
+  }
+  return (
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <defs>
+        <linearGradient id="res-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#7c3aed"/>
+          <stop offset="100%" stopColor="#c084fc"/>
+        </linearGradient>
+      </defs>
+      <rect width="36" height="36" rx="9" fill="url(#res-g)"/>
+      <path d={star4(18, 18, 9, 2)} fill="white"/>
+      <path d={star4(27, 10, 3.5, 0.8)} fill="white" opacity="0.9"/>
+      <path d={star4(10, 26, 2.5, 0.6)} fill="white" opacity="0.7"/>
+    </svg>
+  )
+}
+
+function QrofyleIcon() {
+  return (
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="9" fill="#4f46e5"/>
+      <g transform="translate(4,4) scale(0.875)">
+        <rect x="1" y="1" width="12" height="12" rx="2.5" fill="white"/>
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1" fill="#4f46e5"/>
+        <rect x="5.5" y="5.5" width="3" height="3" rx="0.5" fill="white"/>
+        <rect x="19" y="1" width="12" height="12" rx="2.5" fill="white"/>
+        <rect x="21.5" y="3.5" width="7" height="7" rx="1" fill="#4f46e5"/>
+        <rect x="23.5" y="5.5" width="3" height="3" rx="0.5" fill="white"/>
+        <rect x="1" y="19" width="12" height="12" rx="2.5" fill="white"/>
+        <rect x="3.5" y="21.5" width="7" height="7" rx="1" fill="#4f46e5"/>
+        <rect x="5.5" y="23.5" width="3" height="3" rx="0.5" fill="white"/>
+        <rect x="19" y="19" width="5" height="5" rx="1" fill="white"/>
+        <rect x="26" y="19" width="5" height="5" rx="1" fill="white"/>
+        <rect x="19" y="26" width="5" height="5" rx="1" fill="white"/>
+        <rect x="26" y="26" width="5" height="5" rx="1" fill="white" opacity="0.4"/>
+      </g>
+    </svg>
+  )
+}
+
+function ThemyworldIcon() {
+  return (
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      <defs>
+        <linearGradient id="tmw-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f87171"/>
+          <stop offset="100%" stopColor="#fb923c"/>
+        </linearGradient>
+      </defs>
+      <rect width="36" height="36" rx="9" fill="url(#tmw-g)"/>
+      <text x="18" y="24" textAnchor="middle" fill="white"
+        fontSize="17" fontWeight="bold" fontFamily="sans-serif">M</text>
+    </svg>
+  )
 }
 
 function LogoMark({ size = 30 }: { size?: number }) {
@@ -209,21 +305,16 @@ export default function HomePage() {
         </p>
         <div className="grid sm:grid-cols-2 gap-5">
           {/* Vitrace */}
-          <div className="border border-slate-200 rounded-2xl p-7 hover:border-indigo-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+          <div className="border border-slate-200 rounded-2xl p-7 hover:border-emerald-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shrink-0">
-                <span className="text-white text-sm font-bold">V</span>
-              </div>
+              <VitraceIcon />
               <div>
                 <p className="font-bold text-slate-900 leading-tight">{tx.vitrace_name}</p>
                 <p className="text-xs text-slate-400">{tx.vitrace_tag}</p>
               </div>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed mb-5">{tx.vitrace_desc}</p>
-            <a
-              href="https://vitrace.exbizio.com"
-              className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
-            >
+            <a href="https://vitrace.exbizio.com" className="text-sm font-semibold text-emerald-600 hover:text-emerald-800 transition-colors">
               {tx.product_link}
             </a>
           </div>
@@ -231,19 +322,44 @@ export default function HomePage() {
           {/* Reservio */}
           <div className="border border-slate-200 rounded-2xl p-7 hover:border-violet-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-violet-600 flex items-center justify-center shrink-0">
-                <span className="text-white text-sm font-bold">R</span>
-              </div>
+              <ReservioIcon />
               <div>
                 <p className="font-bold text-slate-900 leading-tight">{tx.reservio_name}</p>
                 <p className="text-xs text-slate-400">{tx.reservio_tag}</p>
               </div>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed mb-5">{tx.reservio_desc}</p>
-            <a
-              href="https://reservio.themyworld.com"
-              className="text-sm font-semibold text-violet-600 hover:text-violet-800 transition-colors"
-            >
+            <a href="https://reservio.themyworld.com" className="text-sm font-semibold text-violet-600 hover:text-violet-800 transition-colors">
+              {tx.product_link}
+            </a>
+          </div>
+
+          {/* QROFYLE */}
+          <div className="border border-slate-200 rounded-2xl p-7 hover:border-indigo-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+            <div className="flex items-center gap-3 mb-5">
+              <QrofyleIcon />
+              <div>
+                <p className="font-bold text-slate-900 leading-tight">{tx.qrofyle_name}</p>
+                <p className="text-xs text-slate-400">{tx.qrofyle_tag}</p>
+              </div>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed mb-5">{tx.qrofyle_desc}</p>
+            <a href="https://qrofyle.exbizio.com" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors">
+              {tx.product_link}
+            </a>
+          </div>
+
+          {/* The MY World */}
+          <div className="border border-slate-200 rounded-2xl p-7 hover:border-orange-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+            <div className="flex items-center gap-3 mb-5">
+              <ThemyworldIcon />
+              <div>
+                <p className="font-bold text-slate-900 leading-tight">{tx.themyworld_name}</p>
+                <p className="text-xs text-slate-400">{tx.themyworld_tag}</p>
+              </div>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed mb-5">{tx.themyworld_desc}</p>
+            <a href="https://www.themyworld.com" className="text-sm font-semibold text-orange-600 hover:text-orange-800 transition-colors">
               {tx.product_link}
             </a>
           </div>
