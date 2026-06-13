@@ -170,17 +170,13 @@ function QrofyleIcon() {
 
 function ThemyworldIcon() {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-      <defs>
-        <linearGradient id="tmw-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f87171"/>
-          <stop offset="100%" stopColor="#fb923c"/>
-        </linearGradient>
-      </defs>
-      <rect width="36" height="36" rx="9" fill="url(#tmw-g)"/>
-      <text x="18" y="24" textAnchor="middle" fill="white"
-        fontSize="17" fontWeight="bold" fontFamily="sans-serif">M</text>
-    </svg>
+    <img
+      src="https://res.cloudinary.com/di1ff45bi/image/upload/v1781101407/GoogleIcon_bb8z6a.png"
+      alt="The MY World"
+      width={36}
+      height={36}
+      className="rounded-full object-cover shrink-0"
+    />
   )
 }
 
